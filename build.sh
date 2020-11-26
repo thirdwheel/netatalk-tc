@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 NEEDED=
 DESTDIR=$PWD/_install
@@ -29,11 +29,12 @@ then
 	tce-load -wi $NEEDED
 fi
 
-wget "https://prdownloads.sourceforge.net/netatalk/netatalk-3.1.12.tar.gz?download"
+wget "https://prdownloads.sourceforge.net/netatalk/netatalk-3.1.12.tar.gz?download" -O netatalk-3.1.12.tar.gz
 
 tar -xvf netatalk-3.1.12.tar.gz
 cd netatalk-3.1.12
 
 ./configure --prefix=/usr/local --disable-quota
 make
-make DESTDIR=$DESTDIR install
+sudo make DESTDIR=$DESTDIR install
+
