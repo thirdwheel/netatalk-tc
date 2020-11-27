@@ -16,7 +16,7 @@ case $(uname -m) in
 		;;
 esac
 
-for i in compiletc libgcrypt-dev db-dev squashfs-tools
+for i in compiletc libgcrypt-dev db-dev squashfs-tools zsync
 do
 	if [ ! -f /usr/local/tce.installed/$i ]
 	then
@@ -38,3 +38,13 @@ cd netatalk-3.1.12
 make
 sudo make DESTDIR=$DESTDIR install
 
+for i in $DESTDIR/usr/local/etc/*.conf
+do
+	sudo mv "$i" "$i.dist"
+done
+
+for i in "" -dev -doc
+do
+	cd $DESTDIR
+	mkdir netatalk{$i}
+done
