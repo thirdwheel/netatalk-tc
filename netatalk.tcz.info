@@ -3,7 +3,7 @@ Description:    Netatalk - Unix File and Print Services for Apple Clients
 Version:        3.1.12
 Author:         Netatalk community
 Original-site:  https://netatalk.sourceforge.net
-Size:
+Size:           
 Copying-policy: GPLv2
 Extension-by:   thirdwheel
 Tags:           netatalk afp macos timemachine
