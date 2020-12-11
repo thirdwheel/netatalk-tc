@@ -45,6 +45,5 @@ done
 
 for i in "" -dev -doc
 do
-	cd $DESTDIR
-	mkdir netatalk{$i}
+	dev/generate_sqfs.sh netatalk$i
 done
