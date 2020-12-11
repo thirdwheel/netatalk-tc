@@ -16,7 +16,7 @@ case $(uname -m) in
 		;;
 esac
 
-for i in compiletc libgcrypt-dev db-dev squashfs-tools zsync
+for i in compiletc libgcrypt-dev db-dev squashfs-tools zsync libevent-dev
 do
 	if [ ! -f /usr/local/tce.installed/$i ]
 	then
@@ -34,7 +34,7 @@ wget "https://prdownloads.sourceforge.net/netatalk/netatalk-3.1.12.tar.gz?downlo
 tar -xvf netatalk-3.1.12.tar.gz
 cd netatalk-3.1.12
 
-./configure --prefix=/usr/local --disable-quota
+./configure --prefix=/usr/local --disable-quota --without-libevent
 make
 sudo make DESTDIR=$DESTDIR install
 
