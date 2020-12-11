@@ -43,6 +43,7 @@ do
 	sudo mv "$i" "$i.dist"
 done
 
+cd ..
 for i in "" -dev -doc
 do
 	dev/generate_sqfs.sh netatalk$i
