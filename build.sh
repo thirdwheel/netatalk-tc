@@ -34,6 +34,8 @@ wget "https://prdownloads.sourceforge.net/netatalk/netatalk-3.1.12.tar.gz?downlo
 tar -xvf netatalk-3.1.12.tar.gz
 cd netatalk-3.1.12
 
+patch -Np0 < ../netatalk-3.1.12-dircache.patch
+
 ./configure --prefix=/usr/local --disable-quota --without-libevent
 make
 sudo make DESTDIR=$DESTDIR install
